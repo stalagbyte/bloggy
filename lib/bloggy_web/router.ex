@@ -29,6 +29,12 @@ defmodule BloggyWeb.Router do
     get "/post/:id", PostController, :getPost
   end
 
+  scope "/api", BloggyWeb do
+    pipe_through :api
+
+    get "/post/:id", PostController, :getPost
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", BloggyWeb do
   #   pipe_through :api

@@ -9,10 +9,16 @@ defmodule BloggyWeb.PostController do
         render conn, "post_form.html", token: get_csrf_token()
     end
 
-    def newPost(conn, _params) do
+    def newPost(conn, %{"title" => title, "body" => body}) do
+        # a_post = %Bloggy.Post{body: "this is the post", title: "A New Post"}
+        a_post = %Bloggy.Post{body: body, title: title}
+
+        Bloggy.Repo.insert(a_post)
+
         render(conn, "index.html")
     end
 
+    @spec getPost(Plug.Conn.t(), any()) :: Plug.Conn.t()
     def getPost(conn, _params) do
         render(conn, "index.html")
     end

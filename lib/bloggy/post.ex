@@ -5,7 +5,7 @@ defmodule Bloggy.Post do
   schema "posts" do
     field :body, :string
     field :title, :string
-    field :author, :id
+    # field :author, :id
 
     timestamps()
   end
