@@ -1,0 +1,14 @@
+<section>
+  <p>New Blog Post</p>
+  <form action="/post" method="post">
+    <label for="title">Post Title</label>
+    <input id="title" name="title"/>
+    <label for="body">Blog Post</label>
+    <textarea type="textarea" id="body" name="body"></textarea>
+     <input type="hidden" value="<%= @token %>" name="_csrf_token"/>
+    <input type="submit" val="submit">
+  </form>
+</section>
+
+
+</section>
